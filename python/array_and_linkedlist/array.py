@@ -1,6 +1,11 @@
 """
 数组创建以及操作
 1. 随机访问，时间复杂度 O(1)
+2. 插入元素，O(n)
+3. 删除元素，O(n)
+4. 遍历数组，O(n)
+5. 查找元素，O(n)
+6. 扩容数组，O(n)
 """
 import random
 
@@ -67,6 +72,20 @@ def find(arr: list[int], target: int):
     return -1
 
 
+def extend(arr: list[int], enlarge: int) -> list[int]:
+    """
+    扩容数组
+    时间复杂度：O(n)
+    :param arr: 数据源
+    :param enlarge: 扩展长度
+    :return: 扩容后的数组
+    """
+    res = [0] * (len(arr) + enlarge)
+    for i in range(len(arr)):
+        res[i] = arr[i]
+    return res
+
+
 if __name__ == "__main__":
 
     # 创建一个数组
@@ -90,4 +109,9 @@ if __name__ == "__main__":
     # 查找元素
     assert find(arr, 2) == 2
     assert find(arr, 100) == -1
+
+    # 扩容
+    arr = extend(arr, 5)
+    print(f"[extend] {arr}")
+    assert len(arr) == 10
 
