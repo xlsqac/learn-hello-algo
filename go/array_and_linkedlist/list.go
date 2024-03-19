@@ -1,32 +1,10 @@
+// 列表及其相关操作，基于 slice 实现
 package main
 
 import (
     "fmt"
     "sort"
 )
-
-// 列表及其相关操作，基于 slice 实现
-
-//func access(nums []int, index int) int {
-//	return nums[index]
-//}
-//
-//func insert(nums []int, index int, val int) []int {
-//    // 插入元素 O(n)
-//    App
-//}
-//
-//func append(nums []int, val int) []int {
-//    // 追加元素 O(1)
-//}
-//
-//func pop
-//
-//func reverse()
-//
-//func extend
-//
-//func sort
 
 func main() {
     // 未初始化和初始化的列表
