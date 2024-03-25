@@ -22,7 +22,7 @@ print(f"[queue front] {front}")
 pop: int = que.popleft()
 print(f"[queue pop] {pop}")
 
-# 获取队列程度
+# 获取队列长度
 size: int = len(que)
 print(f"[queue size] {size}")
 
