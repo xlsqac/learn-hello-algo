@@ -41,10 +41,15 @@ class ArrayDeque:
         self._push(num, False)
 
     def pop_first(self) -> int:
-        pass
+        num: int = self.peek_first()
+        self._front = self._index(self._front + 1)
+        self._size -= 1
+        return num
 
     def pop_last(self) -> int:
-        pass
+        num: int = self.peek_last()
+        self._size -= 1
+        return num
 
     def _peek(self, index: int) -> int:
         if self.is_empty():
@@ -71,35 +76,33 @@ class ArrayDeque:
 if __name__ == "__main__":
     # 初始化双向队列
     deque = ArrayDeque(10)
-    # 队首入队
-    deque.push_first(1)
+    deque.push_last(3)
     deque.push_last(2)
-    deque.push_first(3)
-    deque.push_first(4)
-    deque.push_first(5)
-    deque.push_first(6)
-    deque.push_first(7)
-    deque.push_last(8)
-    deque.push_first(9)
+    deque.push_last(5)
     print("双向队列 deque =", deque.to_array())
 
     # 访问元素
     peek_first: int = deque.peek_first()
     print("队首元素 peek_first =", peek_first)
-    peek_last: int = deque.peek_last()  # TODO
+    peek_last: int = deque.peek_last()
     print("队尾元素 peek_last =", peek_last)
 
-    # 队尾入队
-    # deque.push_last(1)
-    # deque.push_last(2)
-    # deque.push_last(3)
-    # deque.push_last(4)
-    # deque.push_last(5)
-    # deque.push_last(6)
-    # deque.push_last(7)
-    # deque.push_last(8)
-    # deque.push_last(9)
-    # deque.push_last(10)
-    print("双向队列 deque =", deque.to_array())
+    # 元素入队
+    deque.push_last(4)
+    print("元素 4 队尾入队后 deque =", deque.to_array())
+    deque.push_first(1)
+    print("元素 1 队首入队后 deque =", deque.to_array())
 
+    # 元素出队
+    pop_last: int = deque.pop_last()
+    print("队尾出队元素 =", pop_last, "，队尾出队后 deque =", deque.to_array())
+    pop_first: int = deque.pop_first()
+    print("队首出队元素 =", pop_first, "，队首出队后 deque =", deque.to_array())
 
+    # 获取双向队列的长度
+    size: int = deque.size()
+    print("双向队列长度 size =", size)
+
+    # 判断双向队列是否为空
+    is_empty: bool = deque.is_empty()
+    print("双向队列是否为空 =", is_empty)
