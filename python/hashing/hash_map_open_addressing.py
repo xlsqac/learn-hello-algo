@@ -1,6 +1,7 @@
 """
 开放寻址, 线性探测，当哈希冲突时，从冲突的索引开始一步一步找可存放的桶，步长通常为一
 """
+from __future__ import annotations
 
 
 class Pair:
@@ -97,7 +98,7 @@ class HashMapOpenAddressing:
 
 
 if __name__ == "__main__":
-     # 初始化哈希表
+    # 初始化哈希表
     hashmap = HashMapOpenAddressing()
 
     # 添加操作
